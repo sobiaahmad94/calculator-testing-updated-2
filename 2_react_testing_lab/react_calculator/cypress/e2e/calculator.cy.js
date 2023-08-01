@@ -56,7 +56,7 @@ describe("Calculator", () => {
       cy.get('[data-testid="number3"]').click();
       cy.get('[data-testid="operator-subtract"]').click();
       cy.get('[data-testid="number1"]').click();
-      cy.get('[data-testid="equals-operator"]').click();
+      cy.get('[data-testid="operator-equals"]').click();
       
       // should = expected
       // have.text again:)
@@ -74,7 +74,7 @@ describe("Calculator", () => {
         cy.get('[data-testid="number1"]').click();
         cy.get('[data-testid="operator-subtract"]').click();
         cy.get('[data-testid="number2"]').click();
-        cy.get('[data-testid="equals-operator"]').click();
+        cy.get('[data-testid="operator-equals"]').click();
 
 
         // should = expected
@@ -94,7 +94,7 @@ describe("Calculator", () => {
           cy.get('[data-testid="number1"]').click();
           cy.get('[data-testid="operator-add"]').click();
           cy.get('[data-testid="number7"]').click();
-          cy.get('[data-testid="equals-operator"]').click();
+          cy.get('[data-testid="operator-equals"]').click();
 
 
           // should = expected
@@ -114,7 +114,7 @@ describe("Calculator", () => {
           cy.get('[data-testid="number0"]').click();
           cy.get('[data-testid="number3"]').click();
           cy.get('[data-testid="number1"]').click();
-          cy.get('[data-testid="equals-operator"]').click();
+          cy.get('[data-testid="operator-equals"]').click();
 
           // should = expected
           // have.text
@@ -131,7 +131,7 @@ describe("Calculator", () => {
             cy.get('[data-testid="number9"]').click();
             cy.get('[data-testid="decimal"]').click();
             cy.get('[data-testid="number6"]').click();
-            cy.get('[data-testid="equals-operator"]').click();
+            cy.get('[data-testid="operator-equals"]').click();
 
             // should = expected
           // have.text
@@ -158,7 +158,7 @@ describe("Calculator", () => {
             cy.get('[data-testid="number7"]').click();
             cy.get('[data-testid="number2"]').click();
             cy.get('[data-testid="number5"]').click();
-            cy.get('[data-testid="equals-operator"]').click();
+            cy.get('[data-testid="operator-equals"]').click();
 
             // should = expected
             // have.text
@@ -173,7 +173,7 @@ describe("Calculator", () => {
             cy.get('[data-testid="number4"]').click();
             cy.get('[data-testid="operator-divide"]').click();
             cy.get('[data-testid="number0"]').click();
-            cy.get('[data-testid="equals-operator"]').click();
+            cy.get('[data-testid="operator-equals"]').click();
 
             // should = expected
             // have.text
