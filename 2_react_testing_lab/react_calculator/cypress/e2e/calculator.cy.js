@@ -32,7 +32,7 @@ describe("Calculator", () => {
 
 
   // 1) Do the number buttons update the display of the running total?
-  it('Should update the display of the running total', () => {
+  it('should update the display of the running total', () => {
   
     // click events on the numbers
     cy.get('[data-testid="number1"]').click();
@@ -50,7 +50,7 @@ describe("Calculator", () => {
 
     // 2) Do the arithmetical operations update the display with the result of the operation?
     // should be something like 3 - 2 
-    it('Should update the display when clicking arithmetical operations when entering sums', () => {
+    it('should update the display when clicking arithmetical operations when entering sums', () => {
   
       // click events on the button ids on the calc
       cy.get('[data-testid="number3"]').click();
@@ -66,7 +66,7 @@ describe("Calculator", () => {
       // 3) Can multiple operations be chained together?
       // could be something like 4 + 1 - 2 == 3
 
-      it('Should be able to let you chain multiple arithmetic operators together', () => {
+      it('should be able to let you chain multiple arithmetic operators together', () => {
   
         // click events on the button ids on the calc
         cy.get('[data-testid="number4"]').click();
@@ -84,7 +84,7 @@ describe("Calculator", () => {
 
         // 4) Is the output as expected for positive numbers?
         // 8 + 9 + 3 + 1 + 7 = 28 (positive number result)
-        it('Should output positive numbers when the total is a positive number when there is a sum calculated', () => {
+        it('should output positive numbers when the total is a positive number when there is a sum calculated', () => {
           cy.get('[data-testid="number8"]').click();
           cy.get('[data-testid="operator-add"]').click();
           cy.get('[data-testid="number9"]').click();
@@ -104,7 +104,7 @@ describe("Calculator", () => {
 
         // 5) Is the output as expected for negative numbers
         // 1003 - 3031 (negative number result)
-        it('Should output negative numbers when the total is a positive number when there is a sum calculated', () => {
+        it('should output negative numbers when the total is a positive number when there is a sum calculated', () => {
           cy.get('[data-testid="number1"]').click();
           cy.get('[data-testid="number0"]').click();
           cy.get('[data-testid="number0"]').click();
@@ -123,7 +123,7 @@ describe("Calculator", () => {
 
           // 6) Is the output as expected for decimal numbers
           // could do 5.7 + 9.6 = 15.3
-          it('Should output decimal/floating point numbers', () => {
+          it('should output decimal/floating point numbers', () => {
             cy.get('[data-testid="number5"]').click();
             cy.get('[data-testid="decimal"]').click();
             cy.get('[data-testid="number7"]').click();
@@ -141,7 +141,7 @@ describe("Calculator", () => {
 
           // 7) Is the output as expected for very large numbers
           // here's a large number 1399011987235725
-          it('Should be able to output very large numbers', () => {
+          it('should be able to output very large numbers', () => {
             cy.get('[data-testid="number1"]').click();
             cy.get('[data-testid="number3"]').click();
             cy.get('[data-testid="number9"]').click();
@@ -169,16 +169,15 @@ describe("Calculator", () => {
             // 8) What does the code do in exceptional circumstances? Specifically, if you divide by zero, what is the effect? Write a test to describe what you'd prefer to happen, and then correct the code to make that test pass (you will need to modify the Calculator model to meet this requirement).
             // I'll write the test but will change the Calculator component later
             // 4 / 0 is a basic one
-          it('Should be able to divide by 0 so that the user can get the full calculator experience haha', () => {
-            cy.get('[data-testid="number4"]').click();
-            cy.get('[data-testid="operator-divide"]').click();
-            cy.get('[data-testid="number0"]').click();
-            cy.get('[data-testid="operator-equals"]').click();
-
-            // should = expected
-            // have.text
-            cy.get('[data-testid="running-total"]').should('have.text', `Soz pal, you can't divide by 0 right now. What a class calaculator, eh? ;) Hopefully will get that sorted for you soon...`);
-
-          });
+            it('should be able to divide by 0 and display "Infinity"', () => {
+              cy.get('[data-testid="number4"]').click();
+              cy.get('[data-testid="operator-divide"]').click();
+              cy.get('[data-testid="number0"]').click();
+              cy.get('[data-testid="operator-equals"]').click();
+            
+              cy.get('[data-testid="running-total"]').should('have.text', 'Infinity');
+            });
+            
+            
 
 });
