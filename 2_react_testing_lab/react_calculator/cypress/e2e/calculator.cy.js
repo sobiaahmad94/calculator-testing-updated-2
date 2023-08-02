@@ -169,15 +169,18 @@ describe("Calculator", () => {
             // 8) What does the code do in exceptional circumstances? Specifically, if you divide by zero, what is the effect? Write a test to describe what you'd prefer to happen, and then correct the code to make that test pass (you will need to modify the Calculator model to meet this requirement).
             // I'll write the test but will change the Calculator component later
             // 4 / 0 is a basic one
-            it('should be able to divide by 0 and display "Infinity"', () => {
-              cy.get('[data-testid="number4"]').click();
-              cy.get('[data-testid="operator-divide"]').click();
-              cy.get('[data-testid="number0"]').click();
-              cy.get('[data-testid="operator-equals"]').click();
-            
-              cy.get('[data-testid="running-total"]').should('have.text', 'Infinity');
-            });
-            
-            
+            it('should be able to divide by 0 and display my message', () => {
+                cy.get('[data-testid="number4"]').click();
+                cy.get('[data-testid="operator-divide"]').click();
+                cy.get('[data-testid="number0"]').click();
+                cy.get('[data-testid="operator-equals"]').click();
+              
+                cy.get('[data-testid="running-total"]').should('have.text', 'soz pal, you cannot divide by 0 lol. Best calculator in the world, jks');
+              });
 
-});
+            
+        });
+            
+            
+            
+            

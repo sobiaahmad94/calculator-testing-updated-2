@@ -93,15 +93,19 @@ function App() {
   }
 
   const divide = (number) => {
-    // need to add a condition I think so the message changes and doesn't show infinity anymore
-    if (parseFloat(number) == 0) {
-      setRunningTotal("soz pal, you can't divide by 0 lol. Best calculator in the world, jks")
-    }
-    let calculatedNumber = parseFloat(previousTotal) / parseFloat(number);
-    setRunningTotal(calculatedNumber);
-    setCalculatedTotal(calculatedNumber);
-  }
+            // need to add a condition I think so the message changes and doesn't show infinity anymore
 
+    if (parseFloat(number) === 0) {
+      setRunningTotal("soz pal, you cannot divide by 0 lol. Best calculator in the world, jks");
+      // sets previous total to null
+      setPreviousTotal(null); 
+    } else {
+      let calculatedNumber = parseFloat(previousTotal) / parseFloat(number);
+      setRunningTotal(calculatedNumber);
+      setCalculatedTotal(calculatedNumber);
+    }
+  };
+    
 
   return (
     <div className="container">
